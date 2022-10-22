@@ -1,0 +1,8 @@
+<!-- As a heading -->
+<nav class="navbar bg-light rounded shadow-sm p-3 mb-5 bg-body">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">THE MOVIE DB</span>
+    <a *ngIf="user!=undefined" (click)="logout()" class="nav-link">LOGOUT</a>
+  </div>
+</nav>
+<router-outlet></router-outlet>

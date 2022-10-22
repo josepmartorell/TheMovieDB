@@ -1,0 +1,14 @@
+<div class="container col-6">
+    <h4><strong>Login Page</strong></h4>
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputUsername1" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="username" required [(ngModel)]="user.username" name="username">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password">
+        </div>
+        <button type="submit" class="btn btn-dark" (click)="login()">Submit</button>
+    </form>
+</div>
