@@ -8,12 +8,16 @@ import { HomeComponent } from './home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MoviesListComponent } from './components/movies-list/movies-list.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MoviesListComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
