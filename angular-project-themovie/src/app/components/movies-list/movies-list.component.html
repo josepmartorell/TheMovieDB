@@ -7,11 +7,12 @@
             <div>
                 <h5><span style="color: green;">{{item.name}}</span></h5>
                 <p>
-                    <span><strong>TITLE:</strong>&nbsp;{{item.original_title}}</span><br>
+                    <span><strong>TITLE:</strong>&nbsp;{{item.title}}</span><br>
                     <span><strong>DATE:</strong>&nbsp;{{item.release_date}}</span><br>
                     <span><strong>VOTE AVERAGE:</strong>&nbsp;{{item.vote_average}}</span><br>
                 </p>
             </div>
+            <button type="button" class="btn btn-warning btn-sm" [routerLink]="['/movie/', item.id]">Ficha Técnica</button>
         </div>
         <ng-template #spinner>
             <div class="spinner-border w-custom h-custom mx-auto" role="status">

@@ -1,1 +1,35 @@
-<p>movie-details works!</p>
+<!-- centramos el panel -->
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-2 me-3">
+            <div class="col-4">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{movie.poster_path}}"
+                    alt="ID: {{movie.id}}">
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div>
+                <ul>
+                    <p><strong>FICHA TÉCNICA</strong></p>
+                    <hr>
+                    TITLE:&nbsp;{{movie.title}}<br>
+                    ORIGINAL TITLE:&nbsp;{{movie.original_title}}<br>
+                    ORIGINAL LANGUAGE:&nbsp;{{movie.original_language}}<br>
+                    POPULARITY:&nbsp;{{movie.popularity}}<br>
+                    VIDEO:&nbsp;{{movie.video}}<br>
+                    RELEASE DATE:&nbsp;{{movie.release_date}}<br>
+                    VOTE COUNT:&nbsp;{{movie.vote_count}}<br>
+                    VOTE AVERAGE:&nbsp;{{movie.vote_average}}<br>
+                    <hr>
+                    OVERVIEW:&nbsp;{{movie.overview}}
+                    <hr>
+                </ul>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-success" type="button" (click)="router.navigate(['/home'])">VOLVER</button>
+            </div>
+        </div>
+    </div>
+</div>
