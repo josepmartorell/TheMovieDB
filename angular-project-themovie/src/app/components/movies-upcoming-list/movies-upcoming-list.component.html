@@ -1,0 +1,22 @@
+<p class="text-center"><strong>Filtered by:&nbsp;{{selectedFilter}}</strong></p>
+<div class="container mt-5">
+    <div *ngIf="list!=null;" else spinner class="row">
+        <div class="card me-3 mb-3" style="width: 18rem;" *ngFor="let item of list.results">
+            <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{item.poster_path}}" alt="ID: {{item.id}}"
+                class="pt-2">
+            <div>
+                <h5><span style="color: green;">{{item.name}}</span></h5>
+                <p>
+                    <span><strong>TITLE:</strong>&nbsp;{{item.title}}</span><br>
+                    <span><strong>DATE:</strong>&nbsp;{{item.release_date}}</span><br>
+                    <span><strong>VOTE AVERAGE:</strong>&nbsp;{{item.vote_average}}</span><br>
+                </p>
+            </div>
+            <button type="button" class="btn btn-warning btn-sm" [routerLink]="['/upcoming/', item.id]">Ficha Técnica</button>
+        </div>
+        <ng-template #spinner>
+            <div class="spinner-border w-custom h-custom mx-auto" role="status">
+                <span class="sr-only"></span>
+            </div>
+        </ng-template>
+    </div>

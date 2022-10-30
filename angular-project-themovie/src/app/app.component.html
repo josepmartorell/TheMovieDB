@@ -1,8 +1,48 @@
-<!-- As a heading -->
-<nav class="navbar bg-light rounded shadow-sm p-3 mb-5 bg-body">
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg bg-light rounded shadow-sm p-3 mb-5 bg-body thick">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">THE MOVIE DB</span>
-    <a *ngIf="user!=undefined" (click)="logout()" class="nav-link">LOGOUT</a>
-  </div>
+    <a class="navbar-brand mb-0 h1" href="#">THE MOVIE DB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"  *ngIf="user!=undefined">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Movies Lists
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/movies">Popular</a></li>
+              <li><a class="dropdown-item" href="/top">Top Rated</a></li>
+              <li><a class="dropdown-item" href="/latest">Latest</a></li>
+              <li><a class="dropdown-item" href="/upcoming">Upcoming</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Search engine (title)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TV Series Lists
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- elemento a la derecha -->
+        <a  *ngIf="user!=undefined" (click)="logout()" class="nav-link">LOGOUT</a>
+      </div>
+    </div>
 </nav>
 <router-outlet></router-outlet>
