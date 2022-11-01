@@ -1,0 +1,34 @@
+<!-- centramos el panel -->
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-2 me-3">
+            <div class="col-4">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{tv.poster_path}}"
+                    alt="ID: {{tv.id}}">
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div>
+                <ul>
+                    <p><strong>FICHA TÉCNICA</strong></p>
+                    <hr>
+                    SERIE NAME:&nbsp;{{tv.name}}<br>
+                    ORIGINAL SERIE NAME:&nbsp;{{tv.original_name}}<br>
+                    ORIGINAL LANGUAGE:&nbsp;{{tv.original_language}}<br>
+                    POPULARITY:&nbsp;{{tv.popularity}}<br>
+                    FIRST AIR DATE:&nbsp;{{tv.first_air_date}}<br>
+                    VOTE COUNT:&nbsp;{{tv.vote_count}}<br>
+                    VOTE AVERAGE:&nbsp;{{tv.vote_average}}<br>
+                    <hr>
+                    OVERVIEW:&nbsp;{{tv.overview}}
+                    <hr>
+                </ul>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-success" type="button" (click)="router.navigate(['/latest_tv'])">VOLVER</button>
+            </div>
+        </div>
+    </div>
+</div>

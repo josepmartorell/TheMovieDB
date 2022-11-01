@@ -8,6 +8,14 @@ import { MoviesTopComponent } from './components/movies-top/movies-top.component
 import { MoviesUpcomingDetailsComponent } from './components/movies-upcoming-details/movies-upcoming-details.component';
 import { MoviesUpcomingComponent } from './components/movies-upcoming/movies-upcoming.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { TvDetailsComponent } from './components/tv-details/tv-details.component';
+import { TvLatestDetailsComponent } from './components/tv-latest-details/tv-latest-details.component';
+import { TvLatestComponent } from './components/tv-latest/tv-latest.component';
+import { TvTopDetailsComponent } from './components/tv-top-details/tv-top-details.component';
+import { TvTopComponent } from './components/tv-top/tv-top.component';
+import { TvUpcomingDetailsComponent } from './components/tv-upcoming-details/tv-upcoming-details.component';
+import { TvUpcomingComponent } from './components/tv-upcoming/tv-upcoming.component';
+import { TvComponent } from './components/tv/tv.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
@@ -15,14 +23,22 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'movie/:id', component: MovieDetailsComponent},
   { path: 'movies', component: MoviesComponent},
+  { path: 'movie/:id', component: MovieDetailsComponent},
   { path: 'top', component: MoviesTopComponent},
-  { path: 'latest', component: MoviesLatestComponent},
-  { path: 'upcoming', component: MoviesUpcomingComponent},
   { path: 'top/:id', component: MoviesTopDetailsComponent},
+  { path: 'latest', component: MoviesLatestComponent},
   { path: 'latest/:id', component: MoviesLatestDetailsComponent},
-  { path: 'upcoming/:id', component: MoviesUpcomingDetailsComponent} 
+  { path: 'upcoming', component: MoviesUpcomingComponent},
+  { path: 'upcoming/:id', component: MoviesUpcomingDetailsComponent},
+  { path: 'tv', component: TvComponent},
+  { path: 'tv/:id', component: TvDetailsComponent}, 
+  { path: 'top_tv', component: TvTopComponent},
+  { path: 'top_tv/:id', component: TvTopDetailsComponent},
+  { path: 'latest_tv', component: TvLatestComponent},
+  { path: 'latest_tv/:id', component: TvLatestDetailsComponent},
+  { path: 'upcoming_tv', component: TvUpcomingComponent},
+  { path: 'upcoming_tv/:id', component: TvUpcomingDetailsComponent}  
 
 
 ];
