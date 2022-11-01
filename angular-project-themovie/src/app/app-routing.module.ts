@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'top', component: MoviesTopComponent},
   { path: 'top/:id', component: MoviesTopDetailsComponent},
   { path: 'latest', component: MoviesLatestComponent},
-  { path: 'latest/:id', component: MoviesLatestDetailsComponent},
+  { path: 'latest/:id', component: MoviesLatestDetailsComponent}, //do not use
   { path: 'upcoming', component: MoviesUpcomingComponent},
   { path: 'upcoming/:id', component: MoviesUpcomingDetailsComponent},
   { path: 'tv', component: TvComponent},
@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'top_tv', component: TvTopComponent},
   { path: 'top_tv/:id', component: TvTopDetailsComponent},
   { path: 'latest_tv', component: TvLatestComponent},
-  { path: 'latest_tv/:id', component: TvLatestDetailsComponent},
+  { path: 'latest_tv/:id', component: TvLatestDetailsComponent}, //do not use
   { path: 'upcoming_tv', component: TvUpcomingComponent},
   { path: 'upcoming_tv/:id', component: TvUpcomingDetailsComponent}  
 

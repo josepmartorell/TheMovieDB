@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/_services/movie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies-latest-list',
@@ -13,7 +14,7 @@ export class MoviesLatestListComponent implements OnInit {
   selectedFilter: string = ''
 
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, public router: Router) {
     this.numPage = 1;
 
   }

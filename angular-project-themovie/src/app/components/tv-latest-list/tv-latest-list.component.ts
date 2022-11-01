@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TvService } from 'src/app/_services/tv.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tv-latest-list',
@@ -13,7 +14,7 @@ export class TvLatestListComponent implements OnInit {
   selectedFilter: string = ''
 
 
-  constructor(private tvService: TvService) {
+  constructor(private tvService: TvService, public router: Router) {
     this.numPage = 1;
 
   }

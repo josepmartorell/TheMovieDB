@@ -1,20 +1,39 @@
-<p class="text-center"><strong>Filtered by:&nbsp;{{selectedFilter}}</strong></p>
 <div class="container mt-5">
-    <div *ngIf="list!=null;" else spinner class="row">
-        <div class="card me-3 mb-3" style="width: 18rem;" *ngFor="let item of list.results">
-            <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{item.poster_path}}" alt="ID: {{item.id}}">
-            <div class="pt-2">
-                <p>
-                    <span><strong>NAME:</strong>&nbsp;{{item.name}}</span><br>
-                    <span><strong>FIRST AIR DATE:</strong>&nbsp;{{item.first_air_date}}</span><br>
-                    <span><strong>VOTE AVERAGE:</strong>&nbsp;{{item.vote_average}}</span><br>
-                </p>
+    <div class="row">
+        <div class="col-2 me-3">
+            <div class="col-4">
+                <div *ngIf="list.poster_path!=null; else default">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{list.poster_path}}"
+                        alt="ID: {{list.id}}">
+                </div>
+                <ng-template #default>
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/7KOjVtEvpoxvHIJl9zy5CAyQSne.jpg"
+                        alt="ID: {{list.id}}">
+                </ng-template>
             </div>
-            <button type="button" class="btn btn-warning btn-sm" [routerLink]="['/latest_tv/', item.id]">Ficha Técnica</button>
         </div>
-        <ng-template #spinner>
-            <div class="spinner-border w-custom h-custom mx-auto" role="status">
-                <span class="sr-only"></span>
+
+        <div class="col-8">
+            <div>
+                <ul>
+                    <p><strong>FICHA TÉCNICA</strong></p>
+                    <hr>
+                    SERIE NAME:&nbsp;{{list.name}}<br>
+                    ORIGINAL SERIE NAME:&nbsp;{{list.original_name}}<br>
+                    ORIGINAL LANGUAGE:&nbsp;{{list.original_language}}<br>
+                    POPULARITY:&nbsp;{{list.popularity}}<br>
+                    FIRST AIR DATE:&nbsp;{{list.first_air_date}}<br>
+                    VOTE COUNT:&nbsp;{{list.vote_count}}<br>
+                    VOTE AVERAGE:&nbsp;{{list.vote_average}}<br>
+                    <hr>
+                    OVERVIEW:&nbsp;{{list.overview}}
+                    <hr>
+                </ul>
             </div>
-        </ng-template>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-success" type="button" (click)="router.navigate(['/tv'])">VOLVER A TV SERIES</button>
+            </div>
+        </div>
     </div>
+</div>
