@@ -36,9 +36,9 @@ export class TvService {
   getById(id: any): Observable<Tv> {
     return this.http.get(`${BASE_API}/tv/${id}?api_key=${API_KEY}&language=en-US`);
   }
-  //búsqueda detalle película por título
-  findByTitle(title: any): Observable<Tv[]> {
-    return this.http.get<Tv[]>(`${BASE_API}?title=${title}?api_key=${API_KEY}&language=en-US`);
+  //búsqueda detalle serie por título
+  findByTitle(query: any): Observable<Tv[]> {
+    return this.http.get<Tv[]>(`${BASE_API}/search/tv?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`);
   }
   
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MovieService } from '../_services/movie.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,33 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  search: string;
+  list: any = []
+  selectedFilter: string = ''
+
+
+  constructor(private movieService: MovieService, private router: Router) {
+    this.search = '';
+
+  }
 
   ngOnInit(): void {
+    this.selectedFilter = 'By Title';
+  }
+
+  loadByTitle() {
+    if (this.search != '') {
+      this.movieService.findByTitle(this.search).subscribe(response => {
+        console.log(response);
+        this.list = response;
+        this.router.navigate(['/home'])
+      },
+        _error => {
+          alert("se ha producido un error"),
+            console.log(_error)
+        });
+      
+    }
 
   }
 

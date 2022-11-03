@@ -8,10 +8,10 @@ import { HomeComponent } from './home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MoviesTopComponent } from './components/movies-top/movies-top.component';
 import { MoviesTopListComponent } from './components/movies-top-list/movies-top-list.component';
@@ -63,14 +63,14 @@ import { TvUpcomingDetailsComponent } from './components/tv-upcoming-details/tv-
     TvLatestDetailsComponent,
     TvUpcomingComponent,
     TvUpcomingListComponent,
-    TvUpcomingDetailsComponent
+    TvUpcomingDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

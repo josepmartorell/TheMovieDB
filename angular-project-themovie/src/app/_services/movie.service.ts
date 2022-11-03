@@ -38,7 +38,7 @@ export class MovieService {
     return this.http.get(`${BASE_API}/movie/${id}?api_key=${API_KEY}&language=en-US`);
   }
   //búsqueda detalle película por título
-  findByTitle(title: any): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${BASE_API}?title=${title}?api_key=${API_KEY}&language=en-US`);
+  findByTitle(query: any): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${BASE_API}/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`);
   }
 }
