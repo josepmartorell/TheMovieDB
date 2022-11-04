@@ -14,7 +14,7 @@ export class MoviesUpcomingListComponent implements OnInit {
 
 
   constructor(private movieService: MovieService) {
-    this.numPage = 1;
+    this.numPage = 0;
 
   }
 
@@ -23,7 +23,7 @@ export class MoviesUpcomingListComponent implements OnInit {
   }
 
   loadUpcomingMovies() {
-    this.movieService.getUpcomingMovies(this.numPage).subscribe(response => {
+    this.movieService.getUpcomingMovies(++this.numPage).subscribe(response => {
       console.log(response);
       this.list = response;
       this.selectedFilter = 'Upcoming';
@@ -32,6 +32,35 @@ export class MoviesUpcomingListComponent implements OnInit {
         alert("se ha producido un error"),
           console.log(_error)
       });
+  }
+
+  unloadUpcomingMovies() {
+    if (this.numPage > 1) {
+      this.movieService.getUpcomingMovies(--this.numPage).subscribe(response => {
+        console.log(response);
+        this.list = response;
+        this.selectedFilter = 'Upcoming';
+      },
+        _error => {
+          alert("se ha producido un error"),
+            console.log(_error)
+        });
+    }
+
+  }
+
+  loadSpecificPage(page: number){
+    this.movieService.getUpcomingMovies(page).subscribe(response => {
+      console.log(response);
+      this.list = response;
+      this.selectedFilter = 'Upcoming';
+      this.numPage = page
+    },
+      _error => {
+        alert("se ha producido un error"),
+          console.log(_error)
+      });
+
   }
 
 }

@@ -13,7 +13,7 @@ export class TvUpcomingListComponent implements OnInit {
   selectedFilter: string = ''
 
   constructor(private tvService: TvService) {
-    this.numPage = 1;
+    this.numPage = 0;
 
   }
 
@@ -22,7 +22,7 @@ export class TvUpcomingListComponent implements OnInit {
   }
 
   loadOnTheAirTv() {
-    this.tvService.getOnTheAirTv(this.numPage).subscribe(response => {
+    this.tvService.getOnTheAirTv(++this.numPage).subscribe(response => {
       console.log(response);
       this.list = response;
       this.selectedFilter = 'On The Air Series';
@@ -31,6 +31,35 @@ export class TvUpcomingListComponent implements OnInit {
         alert("se ha producido un error"),
           console.log(_error)
       });
+  }
+
+  unloadOnTheAirTv() {
+    if (this.numPage > 1) {
+      this.tvService.getOnTheAirTv(--this.numPage).subscribe(response => {
+        console.log(response);
+        this.list = response;
+        this.selectedFilter = 'On The Air Series';
+      },
+        _error => {
+          alert("se ha producido un error"),
+            console.log(_error)
+        });
+    }
+
+  }
+
+  loadSpecificPage(page: number){
+    this.tvService.getOnTheAirTv(page).subscribe(response => {
+      console.log(response);
+      this.list = response;
+      this.selectedFilter = 'On The Air Series';
+      this.numPage = page
+    },
+      _error => {
+        alert("se ha producido un error"),
+          console.log(_error)
+      });
+
   }
 
 }

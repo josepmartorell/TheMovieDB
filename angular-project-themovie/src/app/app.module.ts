@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
@@ -71,6 +72,7 @@ import { TvUpcomingDetailsComponent } from './components/tv-upcoming-details/tv-
     HttpClientModule,
     FormsModule,
     InfiniteScrollModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

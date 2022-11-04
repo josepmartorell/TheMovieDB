@@ -13,7 +13,7 @@ export class TvListComponent implements OnInit {
   selectedFilter: string = ''
 
   constructor(private tvservice: TvService) {
-    this.numPage = 1
+    this.numPage = 0
    }
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class TvListComponent implements OnInit {
   }
 
   loadPopularTv(){
-    this.tvservice.getPopularTv(this.numPage)
+    this.tvservice.getPopularTv(++this.numPage)
       .subscribe(response =>{this.list = response;
         this.selectedFilter = 'Popular Series';
         console.log(response);
@@ -30,6 +30,35 @@ export class TvListComponent implements OnInit {
         alert("se ha producido un error"),
           console.log(_error)
       });
+  }
+
+  unloadPopularTv() {
+    if (this.numPage > 1) {
+      this.tvservice.getPopularTv(--this.numPage).subscribe(response => {
+        console.log(response);
+        this.list = response;
+        this.selectedFilter = 'Popular Series';
+      },
+        _error => {
+          alert("se ha producido un error"),
+            console.log(_error)
+        });
+    }
+
+  }
+
+  loadSpecificPage(page: number){
+    this.tvservice.getPopularTv(page).subscribe(response => {
+      console.log(response);
+      this.list = response;
+      this.selectedFilter = 'Popular Series';
+      this.numPage = page
+    },
+      _error => {
+        alert("se ha producido un error"),
+          console.log(_error)
+      });
+
   }
 
 }

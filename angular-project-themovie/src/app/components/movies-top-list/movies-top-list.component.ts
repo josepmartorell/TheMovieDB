@@ -14,7 +14,7 @@ export class MoviesTopListComponent implements OnInit {
 
 
   constructor(private movieService: MovieService) {
-    this.numPage = 1;
+    this.numPage = 0;
 
   }
 
@@ -23,7 +23,7 @@ export class MoviesTopListComponent implements OnInit {
   }
 
   loadTopRatedMovies() {
-    this.movieService.getTopRatedMovies(this.numPage).subscribe(response => {
+    this.movieService.getTopRatedMovies(++this.numPage).subscribe(response => {
       console.log(response);
       this.list = response;
       this.selectedFilter = 'Top Rated';
@@ -32,6 +32,35 @@ export class MoviesTopListComponent implements OnInit {
         alert("se ha producido un error"),
           console.log(_error)
       });
+  }
+
+  unloadTopRatedMovies() {
+    if (this.numPage > 1) {
+      this.movieService.getTopRatedMovies(--this.numPage).subscribe(response => {
+        console.log(response);
+        this.list = response;
+        this.selectedFilter = 'Top Rated';
+      },
+        _error => {
+          alert("se ha producido un error"),
+            console.log(_error)
+        });
+    }
+
+  }
+
+  loadSpecificPage(page: number){
+    this.movieService.getTopRatedMovies(page).subscribe(response => {
+      console.log(response);
+      this.list = response;
+      this.selectedFilter = 'Top Rated';
+      this.numPage = page
+    },
+      _error => {
+        alert("se ha producido un error"),
+          console.log(_error)
+      });
+
   }
 
 }

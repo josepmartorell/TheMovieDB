@@ -12,11 +12,21 @@
                     <span><strong>VOTE AVERAGE:</strong>&nbsp;{{item.vote_average}}</span><br>
                 </p>
             </div>
-            <button type="button" class="btn btn-warning btn-sm" [routerLink]="['/upcoming/', item.id]">Ficha Técnica</button>
+            <button type="button" class="btn btn-warning btn-sm" [routerLink]="['/upcoming/', item.id]">Ficha
+                Técnica</button>
         </div>
         <ng-template #spinner>
             <div class="spinner-border w-custom h-custom mx-auto" role="status">
                 <span class="sr-only"></span>
             </div>
         </ng-template>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" (click)="unloadUpcomingMovies()">Previous</a></li>
+                <li class="page-item"><a class="page-link" (click)="loadSpecificPage(1)">1</a></li>
+                <li class="page-item"><a class="page-link" (click)="loadSpecificPage(2)">2</a></li>
+                <li class="page-item"><a class="page-link" (click)="loadSpecificPage(3)">3</a></li>
+                <li class="page-item"><a class="page-link" (click)="loadUpcomingMovies()">Next</a></li>
+            </ul>
+        </nav>
     </div>
