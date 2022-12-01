@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   token: string = ''
 
   user: any = {
-    username: '',
-    password: ''
+    username: 'jetro',
+    password: 'Ra*4'
   };
 
 
