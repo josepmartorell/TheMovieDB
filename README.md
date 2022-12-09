@@ -1,3 +1,3 @@
 # TheMovieDB
 Frontend technical test <br>
-[AWS Deploy](https://main.d2hs3ty6zp697l.amplifyapp.com/login)
+[AWS Deploy](https://main.d3su9opfuhaukz.amplifyapp.com/login)
